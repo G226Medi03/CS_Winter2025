@@ -17,7 +17,7 @@ Student::Student(int id, string name, double gpa = 3.5) : Person(id, name), gpa(
 
 void Student::setGPA(double newGp)
 {
-    assert(newGp>= 0 && newGp <= 4.0);
+    assert(newGp>= 0 && newGp <= 4.5);
     this->gpa = newGp;
 }
 double Student::getGPA() const
