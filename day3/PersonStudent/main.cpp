@@ -1,40 +1,38 @@
+
 #include <iostream>
 
-
 #include "Student.h"
-
+#include "Vector.h"
 
 using namespace std;
 
-class Vector {
-    int x, y;
-public:
-    Vector(int x, int y) : x(x), y(y) {}
 
-    int getX() const { return x; }
-    int getY() const { return y; }
-
-    friend Vector operator+(int scalar, const Vector& v);
-};
-
-Vector operator+(int scalar, const Vector& v) {
-    return { v.getX() + scalar, v.getY() + scalar };
-}
+Person p3(300, "Global Inha");
 
 int main()
 {
-    Person p1;
-    p1.setName("Kim Inha");
-    p1.setId(123);
+    Person* p1 = new Person();
+    p1->setName("Kim Inha");
+    p1->setId(123);
     
     cout << "Person 객체의 정보:\n";
-    cout << "사람의 구분 번호: " << p1.getId() << '\n';
+    cout << "사람의 구분 번호: " << p1->getId() << '\n';
     cout << '\n';
+
+
+    delete p1;
 
 
     Person p2(333, "Hong Inha");
     cout << "p2.id :" << p2.getId() << '\n';
     cout << "p2.name :" << p2.getName() << '\n';
+    cout << '\n';
+
+    p3.setId(300);
+    p3.setName("Global Inha");
+
+    cout << "p3.id :" << p3.getId() << '\n';
+    cout << "p3.name :" << p3.getName() << '\n';
     cout << '\n';
 
 
@@ -46,5 +44,9 @@ int main()
     cout << "Student 객체의 정보:\n";
     cout << "학생의 구분 번호: " << s.getId() << '\n';
     cout << "학생의 학점: " << s.getGPA() << '\n';
+    
+
+    Person p4(s);
+
     return 0;
 }
