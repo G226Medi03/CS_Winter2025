@@ -21,7 +21,7 @@ int main()
 
 
     delete p1;
-
+    p1 = nullptr;
 
     Person p2(333, "Hong Inha");
     cout << "p2.id :" << p2.getId() << '\n';
@@ -46,7 +46,11 @@ int main()
     cout << "학생의 학점: " << s.getGPA() << '\n';
     
 
-    Person p4(s);
+    Person* p4 =  new Student(s);
+
+
+    delete p4;
+    p4 = nullptr;
 
     return 0;
 }
