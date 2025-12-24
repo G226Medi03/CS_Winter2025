@@ -11,10 +11,12 @@ private:
     long id;
     string name;
 
-    Person(const Person& other);
+   
 public:
     Person();
     Person(long int id, string name);
+    Person(const Person& other);
+
     void setId(long identity);
     long getId() const;
 
