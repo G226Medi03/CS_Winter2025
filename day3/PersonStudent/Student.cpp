@@ -10,6 +10,11 @@ Student::Student() : gpa(0) {
     this->setName("Kim Student");
     cout << "[Class:Student] Default Costructor\n";
 }
+
+Student::Student(int id, string name, double gpa = 3.5) : Person(id, name), gpa(gpa) {
+
+}
+
 void Student::setGPA(double newGp)
 {
     assert(newGp>= 0 && newGp <= 4.0);
